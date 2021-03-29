@@ -6,7 +6,7 @@ namespace Codewars
     {
         private static void Main(string[] args)
         {
-            new Codewars().Tickets(new int[] { 25, 25, 50, 50, 25, 100 });
+            new Codewars().Tickets(new int[] { 25, 50, 50, 100 });
         }
     }
 }

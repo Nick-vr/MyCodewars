@@ -32,13 +32,11 @@ namespace Codewars.Tests
         {
             //int[] peopleInLine = new int[] { 25, 25, 50, 50 };
             //int[] peopleInLine2 = new int[] { 25, 100 };
-            //int[] peopleInLine3 = new int[] { 25, 25, 50, 50, 25, 100 };
-            int[] peopleInLine4 = new int[] { 25, 50, 50, 100 };
+            int[] peopleInLine3 = new int[] { 25, 25, 50, 50, 25, 100 };
 
             //Assert.AreEqual("YES", _codewars.Tickets(peopleInLine));
             //Assert.AreEqual("NO", _codewars.Tickets(peopleInLine2));
-            //Assert.AreEqual("YES", _codewars.Tickets(peopleInLine3));
-            Assert.AreEqual("NO", _codewars.Tickets(peopleInLine4));
+            Assert.AreEqual("YES", _codewars.Tickets(peopleInLine3));
         }
     }
 }

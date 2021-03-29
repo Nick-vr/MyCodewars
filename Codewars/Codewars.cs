@@ -49,19 +49,32 @@ namespace Codewars
                 switch (peoplesMoney)
                 {
                     case 25:
-                        twentyfive++;
                         answer = "YES";
+                        twentyfive++;
                         break;
 
                     case 50:
                         answer = twentyfive > 0 ? "YES" : "NO";
+                        twentyfive--;
                         fifty++;
                         break;
 
                     case 100:
-                        answer = twentyfive > 0 && fifty > 0 ? "YES" : "NO";
-                        twentyfive--;
-                        fifty--;
+                        if (twentyfive > 0 && fifty > 0)
+                        {
+                            answer = "YES";
+                            twentyfive--;
+                            fifty--;
+                        }
+                        else if (twentyfive >= 3)
+                        {
+                            answer = "YES";
+                            twentyfive -= 3;
+                        }
+                        else
+                        {
+                            answer = "NO";
+                        }
                         break;
                 }
             }
