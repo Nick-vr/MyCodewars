@@ -20,5 +20,21 @@ namespace Codewars.Tests
             Assert.AreEqual("abcdefghilnoprstu", _codewars.Longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
             Assert.AreEqual("acefghilmnoprstuy", _codewars.Longest("inmanylanguages", "theresapairoffunctions"));
         }
+
+        [Test]
+        public void GivenStringOfNumbersReturnHighestAndLowestNumber()
+        {
+            Assert.AreEqual("42 -9", _codewars.HighAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+        }
+
+        [Test]
+        public void GivenIntArrayOfPeoplesMoneyReturnIfAbleToGiveChangeToEveryone()
+        {
+            int[] peopleInLine = new int[] { 25, 25, 50, 50 };
+            int[] peopleInLine2 = new int[] { 25, 100 };
+
+            Assert.AreEqual("YES", _codewars.Tickets(peopleInLine));
+            Assert.AreEqual("NO", _codewars.Tickets(peopleInLine2));
+        }
     }
 }

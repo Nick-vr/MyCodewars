@@ -6,9 +6,7 @@ namespace Codewars
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("CodeWars!");
-            var res = new Codewars();
-            Console.WriteLine(res.Longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+            new Codewars().Tickets(new int[] { 25, 25, 50 });
         }
     }
 }
