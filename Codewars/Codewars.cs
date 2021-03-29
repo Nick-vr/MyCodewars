@@ -42,7 +42,6 @@ namespace Codewars
             // Return YES, if Vasya can sell a ticket to every person and give change with the bills he has at hand at that moment. Otherwise return NO.
             var twentyfive = 0;
             var fifty = 0;
-            var oneHundred = 0;
             var answer = "";
 
             foreach (var peoplesMoney in peopleInLine)
@@ -51,45 +50,21 @@ namespace Codewars
                 {
                     case 25:
                         twentyfive++;
+                        answer = "YES";
                         break;
 
                     case 50:
+                        answer = twentyfive > 0 ? "YES" : "NO";
                         fifty++;
-                        switch (twentyfive)
-                        {
-                            case 0:
-                                answer = "NO";
-                                break;
-
-                            case >= 1:
-                                answer = "YES";
-                                break;
-                        }
                         break;
 
                     case 100:
-                        oneHundred++;
-                        switch (twentyfive)
-                        {
-                            case 0:
-                                answer = "NO";
-                                break;
-
-                            case < 2 when fifty == 0:
-                                answer = "NO";
-                                break;
-
-                            case >= 1 when fifty >= 1:
-                                answer = "YES";
-                                twentyfive--;
-                                fifty--;
-                                break;
-                        }
-
+                        answer = twentyfive > 0 && fifty > 0 ? "YES" : "NO";
+                        twentyfive--;
+                        fifty--;
                         break;
                 }
             }
-
             return answer;
         }
     }
