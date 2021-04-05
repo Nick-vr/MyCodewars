@@ -40,41 +40,51 @@ namespace Codewars
             //Vasya is currently working as a clerk. He wants to sell a ticket to every single person in this line.
             // Can Vasya sell a ticket to every person and give change if he initially has no money and sells the tickets strictly in the order people queue?
             // Return YES, if Vasya can sell a ticket to every person and give change with the bills he has at hand at that moment. Otherwise return NO.
-            var twentyfive = 0;
-            var fifty = 0;
+            var twentyfive = 0; 1
+            var fifty = 0; 1
             var answer = "";
+
+            Console.WriteLine("[{0}]", string.Join(", ", peopleInLine));
 
             foreach (var peoplesMoney in peopleInLine)
             {
                 switch (peoplesMoney)
                 {
                     case 25:
-                        answer = "YES";
                         twentyfive++;
+                        answer = "YES";
                         break;
 
                     case 50:
-                        answer = twentyfive > 0 ? "YES" : "NO";
-                        twentyfive--;
-                        fifty++;
+                        if (twentyfive > 0)
+                        {
+                            twentyfive--;
+                            fifty++;
+                            answer = "YES";
+                        }
+                        else
+                        {
+                            return "NO";
+                        }
                         break;
 
                     case 100:
                         if (twentyfive > 0 && fifty > 0)
                         {
-                            answer = "YES";
                             twentyfive--;
                             fifty--;
+                            answer = "YES";
                         }
                         else if (twentyfive >= 3)
                         {
-                            answer = "YES";
                             twentyfive -= 3;
+                            answer = "YES";
                         }
                         else
                         {
-                            answer = "NO";
+                            return "NO";
                         }
+
                         break;
                 }
             }
