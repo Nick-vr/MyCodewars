@@ -69,20 +69,21 @@ namespace Codewars
                         break;
 
                     case 100:
-                        if (twentyfive > 0 && fifty > 0)
+                        switch (twentyfive)
                         {
-                            twentyfive--;
-                            fifty--;
-                            answer = "YES";
-                        }
-                        else if (twentyfive >= 3)
-                        {
-                            twentyfive -= 3;
-                            answer = "YES";
-                        }
-                        else
-                        {
-                            return "NO";
+                            case > 0 when fifty > 0:
+                                twentyfive--;
+                                fifty--;
+                                answer = "YES";
+                                break;
+
+                            case >= 3:
+                                twentyfive -= 3;
+                                answer = "YES";
+                                break;
+
+                            default:
+                                return "NO";
                         }
 
                         break;

@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
 
 namespace Codewars.Tests
